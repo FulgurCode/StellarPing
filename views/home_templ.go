@@ -43,7 +43,7 @@ func Home() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<link rel=\"stylesheet\" href=\"/static/styles/home.css\"><header><h1>Stellar Ping</h1></header><div class=\"main\" style=\"margin-top: calc(60px + var(--padding)); padding: var(--padding)\"><main><section class=\"summary\"><h1>Discover the Universe,<br>One Event at a Time!</h1><p>Welcome to Stellar Ping, your ultimate source for all things space! Stay updated on upcoming celestial events, explore the mysteries of the universe, and connect with fellow space enthusiasts. Whether you're a seasoned astronomer or just curious about the cosmos, we've got the information you need to fuel your passion for the stars. Join us on this exciting journey through the universe!</p></section><section class=\"content\"><h1>Events this Month</h1><div class=\"container\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<link rel=\"stylesheet\" href=\"/static/styles/home.css\"><header><h1>Stellar Ping</h1></header><div class=\"main\" style=\"margin-top: calc(60px + var(--padding)); padding: var(--padding)\"><main><section class=\"summary\"><h1>Discover the Universe,<br>One Event at a Time!</h1><p>Welcome to Stellar Ping, your ultimate source for all things space! Stay updated on upcoming celestial events, explore the mysteries of the universe, and connect with fellow space enthusiasts. Whether you're a seasoned astronomer or just curious about the cosmos, we've got the information you need to fuel your passion for the stars. Join us on this exciting journey through the universe!</p></section><section class=\"content\"><h1>&nbsp; Events this Month</h1><div class=\"container\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -51,39 +51,39 @@ func Home() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/400").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/230/400").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/400").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/300/200").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/400").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/450").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/400").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/400/401").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/400").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/530/400").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/400").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/202/400").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/400").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/700/402").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/400").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/600/400").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/400").Render(ctx, templ_7745c5c3_Buffer)
+			templ_7745c5c3_Err = EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/203/500").Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

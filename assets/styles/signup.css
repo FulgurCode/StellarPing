@@ -33,3 +33,7 @@ form{
 .location > *{
     flex: 1;
 }
+
+body{
+    overflow: hidden;
+}
