@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	"github.com/FulgurCode/StellarPing/pkg/mongodb"
 	"github.com/FulgurCode/StellarPing/server"
 	"github.com/joho/godotenv"
 )
@@ -14,6 +15,8 @@ func main() {
 	if port = os.Getenv("PORT"); port == "" {
 		port = "8000"
 	}
+
+	mongodb.Connect()
 
 	server.Run(port)
 }
