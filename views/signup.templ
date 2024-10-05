@@ -8,7 +8,7 @@ templ SignUp() {
         <div class="main">
             <div class="container">
                 <h1>Sign up</h1>
-                <form>
+                <form hx-post="/signup" hx-target="body">
                     <input type="email" placeholder="Email" name="email" required/>
                     <input type="password" placeholder="password" name="password" required/>
                     <div class="location">
@@ -23,7 +23,7 @@ templ SignUp() {
                             <option value="here"> here </option>
                         </select>
                     </div>
-                    <button class="spacetop">Continue</button>
+                    <button type="submit" class="spacetop">Continue</button>
                 </form>
             </div>
         </div> 
