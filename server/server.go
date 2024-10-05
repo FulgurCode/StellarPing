@@ -19,6 +19,7 @@ func Run(port string) {
 
 	app.GET("/", handlers.Home)
 	app.GET("/signup", handlers.SignUp)
+	app.GET("/login", handlers.Login)
 
 	log.Fatal(app.Start(":" + port))
 }

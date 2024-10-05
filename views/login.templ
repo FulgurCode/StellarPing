@@ -1,0 +1,19 @@
+package views
+
+import "github.com/FulgurCode/StellarPing/views/layout"
+
+templ Login() {
+    @layout.Layout() {
+        <link rel="stylesheet" href="/static/styles/signup.css">
+        <div class="main">
+            <div class="container">
+                <h1>Login</h1>
+                <input type="email" placeholder="Email"/>
+                <input type="password" placeholder="password"/>
+                <div class="location">
+                </div>
+                <button class="spacetop">Continue</button>
+            </div>
+        </div> 
+    }
+}

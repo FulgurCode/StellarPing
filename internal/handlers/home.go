@@ -18,3 +18,9 @@ func SignUp(c echo.Context) error {
 
 	return utils.Render(c, component)
 }
+
+func Login(c echo.Context) error {
+	var component = views.Login()
+
+	return utils.Render(c, component)
+}
