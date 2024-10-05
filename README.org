@@ -1,0 +1,64 @@
+#+TITLE: Stellar Ping
+#+AUTHOR: Fulgur Code
+
+This repository contains code for the StellarPing website which shows and notify about Astronomical events based on user location.
+
+* Technology
+
+- Go
+- Templ
+- HTMX
+  
+
+* Contributing
+Contributions are welcome! To contribute to this project:
+***** 1. Fork the project
+***** 2. Clone the fork
+#+begin_src bash
+git clone https://github.com/<username>/StellarPing
+#+end_src
+***** 3. Add Upstream
+#+begin_src bash
+git remote add upstream https://github.com/FulgurCode/StellarPing
+#+end_src
+***** 4. Create a new branch
+#+begin_src bash
+git checkout -b feature
+#+end_src
+
+***** 5. Make your changes
+***** 6. Commit your changes
+#+begin_src bash
+git commit -am "Add new feature"
+#+end_src
+***** 7. Update main
+#+begin_src bash
+git checkout main
+git pull upstream main
+#+end_src
+***** 8. Rebase to main
+#+begin_src bash
+git checkout feature
+git rebase main
+#+end_src
+***** 9. Push to the branch
+#+begin_src bash
+git push origin feature
+#+end_src
+***** 10. Create a new Pull Request
+
+
+* License
+[[file:LICENSE][The GPLv3 License (GPLv3)]]
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see [[https://www.gnu.org/licenses/gpl-3.0][GPLv3]].
