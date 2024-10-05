@@ -12,3 +12,9 @@ func Home(c echo.Context) error {
 
 	return utils.Render(c, component)
 }
+
+func SignUp(c echo.Context) error {
+	var component = views.SignUp()
+
+	return utils.Render(c, component)
+}
