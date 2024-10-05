@@ -7,20 +7,24 @@ templ SignUp() {
         <link rel="stylesheet" href="/static/styles/signup.css">
         <div class="main">
             <div class="container">
-                <h1>Sign in</h1>
-                <input type="email" placeholder="Email"/>
-                <input type="password" placeholder="password"/>
-                <div class="location">
-                    <select>
-                        <option> ide </option>
-                        <option> kod </option>
-                    </select>
-                    <select>
-                        <option> and </option>
-                        <option> here </option>
-                    </select>
-                </div>
-                <button class="spacetop">Continue</button>
+                <h1>Sign up</h1>
+                <form>
+                    <input type="email" placeholder="Email" name="email" required/>
+                    <input type="password" placeholder="password" name="password" required/>
+                    <div class="location">
+                        <select required name="country">
+                            <option disabled selected value=""> country </option>
+                            <option value="ide" value="ide"> ide </option>
+                            <option value="kod"> kod </option>
+                        </select>
+                        <select required name="time-zone">
+                            <option disabled selected value=""> time zone </option>
+                            <option value="and"> and </option>
+                            <option value="here"> here </option>
+                        </select>
+                    </div>
+                    <button class="spacetop">Continue</button>
+                </form>
             </div>
         </div> 
     }

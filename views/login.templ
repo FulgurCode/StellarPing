@@ -8,11 +8,13 @@ templ Login() {
         <div class="main">
             <div class="container">
                 <h1>Login</h1>
-                <input type="email" placeholder="Email"/>
-                <input type="password" placeholder="password"/>
-                <div class="location">
-                </div>
-                <button class="spacetop">Continue</button>
+                <form>
+                    <input type="email" placeholder="Email" required name="email"/>
+                    <input type="password" placeholder="password" required name="password"/>
+                    <div class="location">
+                    </div>
+                    <button class="spacetop">Continue</button>
+                </form>
             </div>
         </div> 
     }
