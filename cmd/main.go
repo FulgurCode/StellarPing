@@ -4,7 +4,9 @@ import (
 	"os"
 
 	"github.com/FulgurCode/StellarPing/pkg/mongodb"
+	"github.com/FulgurCode/StellarPing/pkg/news"
 	"github.com/FulgurCode/StellarPing/server"
+	"github.com/FulgurCode/StellarPing/utils"
 	"github.com/joho/godotenv"
 )
 
@@ -17,6 +19,8 @@ func main() {
 	}
 
 	mongodb.Connect()
+
+	utils.OnceADay(news.GetNews)
 
 	server.Run(port)
 }

@@ -7,3 +7,7 @@ import (
 func UserCollection() *mongo.Collection {
 	return Db.Collection("user")
 }
+
+func NewsCollection() *mongo.Collection {
+	return Db.Collection("news")
+}
