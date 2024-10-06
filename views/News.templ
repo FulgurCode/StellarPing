@@ -15,7 +15,7 @@ templ News(news news.News) {
             <div class="container">
                 <img src={news.Image}/>
                 <h1>{news.Title}</h1>
-                <p class="date">{news.Time}</p>
+                <p class="date">{news.Time[0:10]}</p>
                 <p>
                 {news.News}
                 </p>

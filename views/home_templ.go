@@ -123,13 +123,13 @@ func EventCard(news news.News) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		if len(news.NewsShort) > 150 {
+		if len(news.NewsShort) > 100 {
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<p>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var6 string
-			templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(news.NewsShort[0:150] + "...")
+			templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(news.NewsShort[0:100] + "...")
 			if templ_7745c5c3_Err != nil {
 				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/home.templ`, Line: 42, Col: 43}
 			}

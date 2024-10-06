@@ -69,7 +69,7 @@ section.summary *{
 }
 
 .event-card > span h1{
-    line-height: 0;
+    line-height: 1!important;
 }
 
 .event-card > span > span{
