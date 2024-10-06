@@ -106,3 +106,16 @@ button{
     transform: translate(90%, 90vh);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    .event-card{
+        scale: .8; opacity: 0;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range: 100px 500px;
+    }
+    
+    @keyframes fade-in {
+        from {scale: 0.8; opacity: 0;}
+        to {scale: 1; opacity: 1;}
+    }
+}
