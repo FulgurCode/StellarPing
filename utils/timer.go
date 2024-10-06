@@ -5,7 +5,7 @@ import (
 )
 
 func OnceADay(fn func()) {
-	fn()
+	// fn()
 
 	go func() {
 		for {

@@ -20,7 +20,7 @@ func main() {
 
 	mongodb.Connect()
 
-	utils.OnceADay(news.GetNews)
+	utils.OnceADay(news.CollectNews)
 
 	server.Run(port)
 }

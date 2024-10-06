@@ -12,9 +12,9 @@ type Response struct {
 	Data []News `json:"data"`
 }
 
-func GetNews() {
+func CollectNews() {
 	var NEWS_API = os.Getenv("NEWS_API")
-	var url = fmt.Sprintf("http://api.mediastack.com/v1/news?access_key=%s&source=en&categories=science", NEWS_API)
+	var url = fmt.Sprintf("http://api.mediastack.com/v1/news?access_key=%s&keywords=space&source=en&categories=science&language=en", NEWS_API)
 
 	var req, err = http.NewRequest("GET", url, nil)
 	if err != nil {

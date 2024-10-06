@@ -1,8 +1,11 @@
 package views
 
-import "github.com/FulgurCode/StellarPing/views/layout"
+import (
+	"github.com/FulgurCode/StellarPing/pkg/news"
+  "github.com/FulgurCode/StellarPing/views/layout"
+)
 
-templ Home() {
+templ Home(news []news.News) {
     @layout.Layout() {
       <link rel="stylesheet" href="/static/styles/home.css">
       <header><h1>Stellar Ping</h1></header>
@@ -17,16 +20,9 @@ templ Home() {
           <section class="content">
             <h1> &nbsp; Events this Month</h1>
             <div class="container" style="margin-bottom: 250px;">
-              @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/300/250")
-              @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/230/400")
-              @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/300/200")
-              @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/200/450")
-              @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/400/401")
-              @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/530/400")
-              @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/202/400")
-              @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/700/402")
-              @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/600/400")
-              @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/203/500")
+              for _, n := range news {
+                @EventCard(n)
+              }
             </div>
           </section>
         </main>
@@ -34,13 +30,13 @@ templ Home() {
     }
 }
 
-templ EventCard(eventName string, description string, imgUrl string) {
+templ EventCard(news news.News) {
   <div class="event-card">
-    <img src={imgUrl} />
+    <img src={news.Image} />
     <span>
-      <h1>{eventName}</h1>
+      <h1>Title</h1>
       <span>
-        <p>{description}</p>
+        <p>{news.Title}</p>
         <button class="view-button">View</button>
       </span>
     </span>

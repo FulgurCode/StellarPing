@@ -3,6 +3,7 @@ package handlers
 import (
 	"net/http"
 
+	"github.com/FulgurCode/StellarPing/pkg/news"
 	"github.com/FulgurCode/StellarPing/utils"
 	"github.com/FulgurCode/StellarPing/views"
 	"github.com/labstack/echo/v4"
@@ -10,31 +11,32 @@ import (
 
 // Home page handler
 func Home(c echo.Context) error {
-	var component = views.Home()
-	if isLoggedIn := utils.GetSessionValue(c, "auth", "isLoggedIn"); isLoggedIn != nil && isLoggedIn.(bool) {
+	if isLoggedIn := utils.GetSessionValue(c, "auth", "isLoggedIn"); isLoggedIn == nil || !isLoggedIn.(bool) {
+		if c.Request().Header.Get("HX-Request") == "true" {
+			c.Response().Header().Set("HX-Location", "/login")
+			return c.NoContent(200)
+		}
 
-		return utils.Render(c, component)
+		return c.Redirect(http.StatusSeeOther, "/login")
 	}
 
-	if c.Request().Header.Get("HX-Request") == "true" {
-		c.Response().Header().Set("HX-Location", "/login")
-		return c.NoContent(200)
-	}
+	var news = news.GetNews()
 
-	return c.Redirect(http.StatusSeeOther, "/login")
+	var component = views.Home(news)
+	return utils.Render(c, component)
 }
 
 func News(c echo.Context) error {
+	if isLoggedIn := utils.GetSessionValue(c, "auth", "isLoggedIn"); isLoggedIn == nil || !isLoggedIn.(bool) {
+		if c.Request().Header.Get("HX-Request") == "true" {
+			c.Response().Header().Set("HX-Location", "/login")
+			return c.NoContent(200)
+		}
+
+		return c.Redirect(http.StatusSeeOther, "/login")
+	}
+
 	var component = views.News()
-	if isLoggedIn := utils.GetSessionValue(c, "auth", "isLoggedIn"); isLoggedIn != nil && isLoggedIn.(bool) {
 
-		return utils.Render(c, component)
-	}
-
-	if c.Request().Header.Get("HX-Request") == "true" {
-		c.Response().Header().Set("HX-Location", "/login")
-		return c.NoContent(200)
-	}
-
-	return c.Redirect(http.StatusSeeOther, "/login")
+	return utils.Render(c, component)
 }

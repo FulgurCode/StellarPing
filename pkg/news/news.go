@@ -2,6 +2,7 @@ package news
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/FulgurCode/StellarPing/pkg/mongodb"
 	"go.mongodb.org/mongo-driver/bson"
@@ -30,4 +31,21 @@ func (n *News) Remove() error {
 
 func AddNews(news []interface{}) {
 	mongodb.NewsCollection().InsertMany(context.Background(), news)
+}
+
+func GetNews() []News {
+	var cursor, err = mongodb.NewsCollection().Find(context.Background(), bson.M{})
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+
+	var allNews []News
+
+	for cursor.Next(context.Background()) {
+		var n News
+		cursor.Decode(&n)
+		allNews = append(allNews, n)
+	}
+
+	return allNews
 }
