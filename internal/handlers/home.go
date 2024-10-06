@@ -11,14 +11,14 @@ import (
 
 // Home page handler
 func Home(c echo.Context) error {
-	if isLoggedIn := utils.GetSessionValue(c, "auth", "isLoggedIn"); isLoggedIn == nil || !isLoggedIn.(bool) {
-		if c.Request().Header.Get("HX-Request") == "true" {
-			c.Response().Header().Set("HX-Location", "/login")
-			return c.NoContent(200)
-		}
+	// if isLoggedIn := utils.GetSessionValue(c, "auth", "isLoggedIn"); isLoggedIn == nil || !isLoggedIn.(bool) {
+	// 	if c.Request().Header.Get("HX-Request") == "true" {
+	// 		c.Response().Header().Set("HX-Location", "/login")
+	// 		return c.NoContent(200)
+	// 	}
 
-		return c.Redirect(http.StatusSeeOther, "/login")
-	}
+	// 	return c.Redirect(http.StatusSeeOther, "/login")
+	// }
 
 	var news = news.GetNews()
 
@@ -27,14 +27,14 @@ func Home(c echo.Context) error {
 }
 
 func News(c echo.Context) error {
-	if isLoggedIn := utils.GetSessionValue(c, "auth", "isLoggedIn"); isLoggedIn == nil || !isLoggedIn.(bool) {
-		if c.Request().Header.Get("HX-Request") == "true" {
-			c.Response().Header().Set("HX-Location", "/login")
-			return c.NoContent(200)
-		}
+	// if isLoggedIn := utils.GetSessionValue(c, "auth", "isLoggedIn"); isLoggedIn == nil || !isLoggedIn.(bool) {
+	// 	if c.Request().Header.Get("HX-Request") == "true" {
+	// 		c.Response().Header().Set("HX-Location", "/login")
+	// 		return c.NoContent(200)
+	// 	}
 
-		return c.Redirect(http.StatusSeeOther, "/login")
-	}
+	// 	return c.Redirect(http.StatusSeeOther, "/login")
+	// }
 	var id = c.Param("id")
 	var n = news.GetOneNews(id)
 
