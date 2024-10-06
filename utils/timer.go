@@ -5,7 +5,7 @@ import (
 )
 
 func OnceADay(fn func(string)) {
-	// fn("7")
+	fn("7")
 
 	go func() {
 		for {
