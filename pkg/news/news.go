@@ -10,14 +10,14 @@ import (
 )
 
 type News struct {
-	Id          string `json:"id,omitempty" bson:"_id,omitempty"`
-	Title       string `json:"title" bson:"title"`
-	Description string `json:"description" bson:"description"`
-	Url         string `json:"url" bson:"url"`
-	Image       string `json:"image" bson:"image"`
-	Source      string `json:"source" bson:"source"`
-	Country     string `json:"country" bson:"country"`
-	Date        string `json:"published_at" bson:"published_at"`
+	Id        string `json:"_id,omitempty" bson:"_id,omitempty"`
+	Title     string `json:"title" bson:"title"`
+	News      string `json:"news_text" bson:"news_text"`
+	Url       string `json:"site_url" bson:"site_ur"`
+	Image     string `json:"image_url" bson:"image_url"`
+	NewsShort string `json:"news_summary_short" bson:"news_summary_short"`
+	NewsLong  string `json:"news_summary_long" bson:"news_summary_long"`
+	Time      string `json:"timestamp" bson:"timestamp"`
 }
 
 func (n *News) Add() error {
@@ -53,7 +53,7 @@ func GetNews() []News {
 
 func GetOneNews(id string) News {
 	var news News
-	var objectId,_ = primitive.ObjectIDFromHex(id)
+	var objectId, _ = primitive.ObjectIDFromHex(id)
 
 	var result = mongodb.NewsCollection().FindOne(context.Background(), bson.M{"_id": objectId})
 	result.Decode(&news)

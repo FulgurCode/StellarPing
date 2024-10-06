@@ -36,9 +36,9 @@ templ EventCard(news news.News) {
   <div class="event-card">
     <img src={news.Image} />
     <span>
-      <h1>Title</h1>
+      <h1>{news.Title}</h1>
       <span>
-        <p>{news.Description}</p>
+        <p>{news.NewsShort}</p>
         <a href={ templ.URL(fmt.Sprintf("/news/%s/", news.Id))} ><button class="view-button"  >View</button></a>
       </span>
     </span>

@@ -8,18 +8,17 @@ import (
 	"os"
 )
 
-type Response struct {
-	Data []News `json:"data"`
-}
-
-func CollectNews() {
+func CollectNews(day string) {
 	var NEWS_API = os.Getenv("NEWS_API")
-	var url = fmt.Sprintf("http://api.mediastack.com/v1/news?access_key=%s&keywords=space&source=en&categories=science&language=en", NEWS_API)
+	var url = "https://spacenews.p.rapidapi.com/datenews/" + day
 
 	var req, err = http.NewRequest("GET", url, nil)
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	req.Header.Add("x-rapidapi-key", NEWS_API)
+	req.Header.Add("x-rapidapi-host", "spacenews.p.rapidapi.com")
 
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
@@ -29,11 +28,14 @@ func CollectNews() {
 	defer res.Body.Close()
 	body, _ := io.ReadAll(res.Body)
 
-	var response Response
-	json.Unmarshal(body, &response)
+	var response []News
+	err = json.Unmarshal(body, &response)
+	if err != nil {
+		panic(err)
+	}
 
 	var news []interface{}
-	for _, n := range response.Data {
+	for _, n := range response {
 		news = append(news, n)
 	}
 

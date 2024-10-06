@@ -15,9 +15,9 @@ templ News(news news.News) {
             <div class="container">
                 <img src={news.Image}/>
                 <h1>{news.Title}</h1>
-                <p class="date">{news.Date}</p>
+                <p class="date">{news.Time}</p>
                 <p>
-                {news.Description}
+                {news.News}
                 </p>
                 <a href={templ.URL(news.Url)}><button style="max-width: max-content;">View Source </button></a>
             </div>
