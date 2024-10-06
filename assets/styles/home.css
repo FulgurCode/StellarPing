@@ -65,8 +65,7 @@ section.summary *{
     bottom: 0;
     left: 0;
 
-    flex-wrap: wrap;
-    display: none;
+    /* flex-wrap: wrap; */
 }
 
 .event-card > span h1{
@@ -102,6 +101,13 @@ section.summary *{
     grid-auto-rows: auto;
     gap: var(--gap);
 
+    margin-bottom: 250px;
+}
+
+@media (max-width: 410px) {
+    .container{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
 /* .container{
