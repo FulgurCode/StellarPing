@@ -1,0 +1,24 @@
+package views
+
+import "github.com/FulgurCode/StellarPing/views/layout"
+
+templ News() {
+    @layout.Layout() {
+      <link rel="stylesheet" href="/static/styles/home.css">
+      <link rel="stylesheet" href="/static/styles/news.css">
+      <header><h1>Stellar Ping</h1></header>
+      <div class="main" style="margin-top: calc(60px + var(--padding)); padding: var(--padding)">
+        <main>
+            <div class="container">
+                <img src="https://picsum.photos/503/300"/>
+                <h1>Title</h1>
+                <p class="date">Date: 10/29/0293</p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <button style="max-width: max-content;">View Source</button>
+            </div>
+        </main>
+      </div> 
+    }
+}

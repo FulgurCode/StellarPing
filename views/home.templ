@@ -6,8 +6,8 @@ templ Home() {
     @layout.Layout() {
       <link rel="stylesheet" href="/static/styles/home.css">
       <header><h1>Stellar Ping</h1></header>
-      <div class="main" style="margin-top: calc(60px + var(--padding)); padding: var(--padding)">
-        <main>
+      <div class="main">
+        <main style="margin-top: calc(60px + var(--padding)); padding: var(--padding)">
           <section class="summary">
             <h1>Discover the Universe,<br>One Event at a Time!</h1>
             <p>
@@ -16,7 +16,7 @@ templ Home() {
           </section>
           <section class="content">
             <h1> &nbsp; Events this Month</h1>
-            <div class="container">
+            <div class="container" style="margin-bottom: 250px;">
               @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/300/250")
               @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/230/400")
               @EventCard("Event", "Lorem ipsum really awesome space event that you cannot miss", "https://picsum.photos/300/200")

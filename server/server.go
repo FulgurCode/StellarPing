@@ -25,6 +25,7 @@ func Run(port string) {
 	app.Static("/static", "assets")
 
 	app.GET("/", handlers.Home)
+	app.GET("/news", handlers.News)
 
 	app.GET("/signup", handlers.SignUp)
 	app.POST("/signup", handlers.SignupPost)
