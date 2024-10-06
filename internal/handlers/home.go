@@ -35,8 +35,9 @@ func News(c echo.Context) error {
 
 		return c.Redirect(http.StatusSeeOther, "/login")
 	}
+	var id = c.Param("id")
+	var n = news.GetOneNews(id)
 
-	var component = views.News()
-
+	var component = views.News(n)
 	return utils.Render(c, component)
 }

@@ -6,6 +6,7 @@ import (
 
 	"github.com/FulgurCode/StellarPing/pkg/mongodb"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type News struct {
@@ -48,4 +49,14 @@ func GetNews() []News {
 	}
 
 	return allNews
+}
+
+func GetOneNews(id string) News {
+	var news News
+	var objectId,_ = primitive.ObjectIDFromHex(id)
+
+	var result = mongodb.NewsCollection().FindOne(context.Background(), bson.M{"_id": objectId})
+	result.Decode(&news)
+
+	return news
 }

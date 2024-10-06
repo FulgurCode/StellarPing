@@ -1,6 +1,8 @@
 package views
 
 import (
+  "fmt"
+
 	"github.com/FulgurCode/StellarPing/pkg/news"
   "github.com/FulgurCode/StellarPing/views/layout"
 )
@@ -36,8 +38,8 @@ templ EventCard(news news.News) {
     <span>
       <h1>Title</h1>
       <span>
-        <p>{news.Title}</p>
-        <button class="view-button">View</button>
+        <p>{news.Description}</p>
+        <a href={ templ.URL(fmt.Sprintf("/news/%s/", news.Id))} ><button class="view-button"  >View</button></a>
       </span>
     </span>
   </div>
