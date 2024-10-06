@@ -18,7 +18,8 @@ func CreateSession(c echo.Context, name string) {
 		sess.Options = &sessions.Options{
 			Path:     "/",
 			HttpOnly: true,
-			Secure:   true,
+			// Secure:   true,
+			SameSite: 2, // SameSite - Lax
 			MaxAge:   60 * 60 * 24 * 365,
 		}
 	}
