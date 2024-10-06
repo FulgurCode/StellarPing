@@ -1,8 +1,6 @@
 package handlers
 
 import (
-	"net/http"
-
 	"github.com/FulgurCode/StellarPing/pkg/news"
 	"github.com/FulgurCode/StellarPing/utils"
 	"github.com/FulgurCode/StellarPing/views"
